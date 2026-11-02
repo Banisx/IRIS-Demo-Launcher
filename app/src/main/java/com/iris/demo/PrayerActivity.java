@@ -1,7 +1,6 @@
 package com.iris.demo;
 
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Locale;
 
 public class PrayerTimesHelper {
@@ -47,7 +46,7 @@ public class PrayerTimesHelper {
         Calendar now = Calendar.getInstance();
         int currentMinutes = now.get(Calendar.HOUR_OF_DAY) * 60 + now.get(Calendar.MINUTE);
 
-        Prize: for (PrayerSlot slot : getPrayerTimes()) {
+        for (PrayerSlot slot : getPrayerTimes()) {
             int slotMinutes = slot.hour * 60 + slot.minute;
             if (slotMinutes > currentMinutes) {
                 int diff = slotMinutes - currentMinutes;
@@ -59,7 +58,6 @@ public class PrayerTimesHelper {
         }
 
         PrayerSlot first = getPrayerTimes()[0];
-        String remaining = "24:00";
-        return new PrayerInfo(first.name, first.time, remaining + " حتى الأذان");
+        return new PrayerInfo(first.name, first.time, "24:00 حتى الأذان");
     }
 }

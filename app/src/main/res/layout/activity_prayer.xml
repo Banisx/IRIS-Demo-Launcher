@@ -1,64 +1,119 @@
-package com.iris.demo;
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#101010"
+    android:padding="18dp">
 
-import android.app.Activity;
-import android.os.Bundle;
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingBottom="10dp">
 
-public class ZikrActivity extends Activity {
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="IRIS"
+            android:textColor="#F4E5B3"
+            android:textSize="28sp" />
 
-    private final String[] zikrList = new String[] {
-            "سبحان الله وبحمده، عدد خلقه ورضا نفسه وزنة عرشه ومداد كلماته.",
-            "اللهمّ اغفر لي، وارحمني، واهدني، وعافني، وارزقني.",
-            "أستغفر الله العظيم وأتوب إليه.",
-            "لا إله إلا الله وحده لا شريك له، له الملك وله الحمد، وهو على كل شيء قدير.",
-            "الحمد لله الذي بنعمته تتم الصالحات."
-    };
+        <TextView
+            android:id="@+id/tvClock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20:45"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+    </LinearLayout>
 
-    private TextView zikrText;
-    private Button btnNext;
-    private Button btnBack;
-    private int currentIndex = 0;
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#1B1B1B"
+        android:padding="14dp"
+        android:layout_marginBottom="12dp">
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_zikr);
+        <TextView
+            android:id="@+id/tvCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="الجزائر"
+            android:textColor="#D9D9D9"
+            android:textSize="18sp" />
 
-        zikrText = findViewById(R.id.zikrText);
-        btnNext = findViewById(R.id.btnNextZikr);
-        btnBack = findViewById(R.id.btnBackZikr);
+        <TextView
+            android:id="@+id/tvNextPrayer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="المغرب - 18:41"
+            android:textColor="#F4E5B3"
+            android:textSize="24sp"
+            android:paddingTop="8dp" />
 
-        updateZikr();
+        <TextView
+            android:id="@+id/tvCountdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="00:42 حتى الأذان"
+            android:textColor="#8AE6B9"
+            android:textSize="18sp"
+            android:paddingTop="6dp" />
+    </LinearLayout>
 
-        btnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                currentIndex = (currentIndex + 1) % zikrList.length;
-                updateZikr();
-            }
-        });
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="التطبيقات المفضلة"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:paddingBottom="10dp" />
 
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-    }
+    <GridView
+        android:id="@+id/favoritesGrid"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:numColumns="4"
+        android:padding="6dp" />
 
-    private void updateZikr() {
-        zikrText.setText(zikrList[currentIndex]);
-    }
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
 
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            finish();
-            return true;
-        }
-        return super.onKeyDown(keyCode, event);
-    }
-}
+        <Button
+            android:id="@+id/btnAllApps"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Apps" />
+
+        <Button
+            android:id="@+id/btnPrayer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Prayer" />
+
+        <Button
+            android:id="@+id/btnZikr"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Zikr" />
+
+        <Button
+            android:id="@+id/btnSettings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Settings" />
+    </LinearLayout>
+
+</LinearLayout>

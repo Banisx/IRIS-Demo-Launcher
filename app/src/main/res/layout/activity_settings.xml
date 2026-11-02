@@ -3,45 +3,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#0F1014"
+    android:background="#101010"
     android:padding="20dp">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="IRIS Settings"
+        android:text="الأذكار"
+        android:textColor="#F4E5B3"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:paddingBottom="24dp" />
+
+    <TextView
+        android:id="@+id/zikrText"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="سبحان الله وبحمده"
         android:textColor="#FFFFFF"
-        android:textSize="26sp"
-        android:paddingBottom="20dp" />
+        android:textSize="24sp"
+        android:gravity="center"
+        android:padding="12dp" />
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Theme: Dark"
-        android:textColor="#D9D9D9"
-        android:textSize="18sp"
-        android:paddingBottom="10dp" />
+        android:orientation="horizontal">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Language: English"
-        android:textColor="#D9D9D9"
-        android:textSize="18sp"
-        android:paddingBottom="10dp" />
+        <Button
+            android:id="@+id/btnNextZikr"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="التالي" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Home mode: TV Friendly"
-        android:textColor="#D9D9D9"
-        android:textSize="18sp"
-        android:paddingBottom="20dp" />
-
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Back" />
+        <Button
+            android:id="@+id/btnBackZikr"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="رجوع" />
+    </LinearLayout>
 
 </LinearLayout>

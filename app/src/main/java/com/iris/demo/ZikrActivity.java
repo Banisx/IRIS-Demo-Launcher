@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 public class PrayerActivity extends Activity {
 
-    private TextView[] prayerTexts = new TextView[6];
+    private final TextView[] prayerTexts = new TextView[6];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

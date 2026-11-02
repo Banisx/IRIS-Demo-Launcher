@@ -1,6 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <style name="AppTheme" parent="@android:style/Theme.Holo.NoActionBar.Fullscreen">
-        <item name="android:colorBackground">#101010</item>
-    </style>
-</resources>
+# IRIS Prayer TV
+
+IRIS Prayer TV هو launcher مخصص للتلفاز/TV Box مزود بتصميم عربي/إسلامي، ويجمع بين واجهة المنزل وأوقات الصلاة والأذكار.
+
+## الملامح
+- شاشة رئيسية مخصصة للتلفاز
+- أوقات الصلاة في الجزائر
+- شاشة الأذكار
+- واجهة إعدادات بسيطة
+- مناسب للأجهزة القديمة
+- تصميم داكن مع ألوان ذهبي/أخضر
+
+## التشغيل
+1. افتح المشروع في Android Studio
+2. بناء APK
+3. ثبّت APK على التلفاز
+4. اختر التطبيق كـ Home App
+
+## الهيكل
+- MainActivity
+- PrayerActivity
+- ZikrActivity
+- SettingsActivity
+- AllAppsActivity
+
+## الأهداف
+- واجهة سهلة في الاستخدام بالريموت
+- تطبيق منزلي مناسب للـ TV Box
+- طابع إسلامي عربي واضح
+- قابل للتوسعة مستقبلاً

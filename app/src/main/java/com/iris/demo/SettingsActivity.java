@@ -4,18 +4,42 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.widget.Button;
+import android.widget.TextView;
 
-public class SettingsActivity extends Activity {
+public class ZikrActivity extends Activity {
 
+    private final String[] zikrList = new String[] {
+            "سبحان الله وبحمده، عدد خلقه ورضا نفسه وزنة عرشه ومداد كلماته.",
+            "اللهمّ اغفر لي، وارحمني، واهدني، وعافني، وارزقني.",
+            "أستغفر الله العظيم وأتوب إليه.",
+            "لا إله إلا الله وحده لا شريك له، له الملك وله الحمد، وهو على كل شيء قدير.",
+            "الحمد لله الذي بنعمته تتم الصالحات."
+    };
+
+    private TextView zikrText;
+    private Button btnNext;
     private Button btnBack;
+    private int currentIndex = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
+        setContentView(R.layout.activity_zikr);
 
-        btnBack = findViewById(R.id.btnBack);
+        zikrText = findViewById(R.id.zikrText);
+        btnNext = findViewById(R.id.btnNextZikr);
+        btnBack = findViewById(R.id.btnBackZikr);
+
+        updateZikr();
+        btnNext.setOnClickListener(v -> {
+            currentIndex = (currentIndex + 1) % zikrList.length;
+            updateZikr();
+        });
         btnBack.setOnClickListener(v -> finish());
+    }
+
+    private void updateZikr() {
+        zikrText.setText(zikrList[currentIndex]);
     }
 
     @Override

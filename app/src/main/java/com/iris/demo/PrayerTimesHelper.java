@@ -26,6 +26,7 @@ public class MainActivity extends Activity {
     private TextView tvClock;
     private TextView tvNextPrayer;
     private TextView tvCountdown;
+    private TextView tvCity;
 
     private final List<AppInfo> favoriteApps = new ArrayList<>();
 
@@ -42,7 +43,9 @@ public class MainActivity extends Activity {
         tvClock = findViewById(R.id.tvClock);
         tvNextPrayer = findViewById(R.id.tvNextPrayer);
         tvCountdown = findViewById(R.id.tvCountdown);
+        tvCity = findViewById(R.id.tvCity);
 
+        tvCity.setText("الجزائر");
         updateClock();
         updatePrayerInfo();
         loadFavorites();
@@ -91,12 +94,9 @@ public class MainActivity extends Activity {
     }
 
     private void setupListeners() {
-        favoritesGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                AppInfo app = favoriteApps.get(position);
-                AppUtils.launchApp(MainActivity.this, app.getPackageName());
-            }
+        favoritesGrid.setOnItemClickListener((parent, view, position, id) -> {
+            AppInfo app = favoriteApps.get(position);
+            AppUtils.launchApp(MainActivity.this, app.getPackageName());
         });
 
         btnAllApps.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, AllAppsActivity.class)));
