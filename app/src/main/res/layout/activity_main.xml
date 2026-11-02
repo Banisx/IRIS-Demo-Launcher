@@ -3,68 +3,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#111111"
-    android:padding="16dp">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:paddingBottom="16dp">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="IRIS"
-            android:textColor="#FFFFFF"
-            android:textSize="28sp" />
-
-        <TextView
-            android:id="@+id/tvClock"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="12:30"
-            android:textColor="#FFFFFF"
-            android:textSize="22sp" />
-    </LinearLayout>
+    android:background="#101010"
+    android:padding="20dp">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Favorite Apps"
-        android:textColor="#FFFFFF"
-        android:textSize="22sp"
-        android:paddingBottom="12dp" />
+        android:text="الأذكار"
+        android:textColor="#F4E5B3"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:paddingBottom="24dp" />
 
-    <GridView
-        android:id="@+id/favoritesGrid"
+    <TextView
+        android:id="@+id/zikrText"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:numColumns="4"
-        android:padding="6dp" />
+        android:text="سبحان الله وبحمده"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:padding="12dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="12dp">
+        android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnAllApps"
+            android:id="@+id/btnNextZikr"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="All Apps" />
+            android:text="التالي" />
 
         <Button
-            android:id="@+id/btnSettings"
+            android:id="@+id/btnBackZikr"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Settings" />
+            android:text="رجوع" />
     </LinearLayout>
 
 </LinearLayout>

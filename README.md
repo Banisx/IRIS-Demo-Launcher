@@ -1,2 +1,10 @@
-# IRIS-Demo-Launcher
-Demo Android TV launcher for IRIS project ready to clone and build
+# Android Studio project
+.idea/
+.gradle/
+local.properties
+build/
+**/build/
+*.iml
+*.apk
+*.aab
+.DS_Store
